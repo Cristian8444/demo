@@ -14,7 +14,7 @@
   		<div class="pull-left">
   			Welcome ${logged_user}! This is your blog!
   			<a href="/logout" class="btn btn-primary">Logout</a>
-  			<div><a href="/blog2" class="btn btn-primary">Add New Text!</a><div>
+  			<div><a href="/addNewBlog" class="btn btn-primary">Add New Text!</a><div>
   		</div>
   		<div class="clearfix"></div>
   	</div>

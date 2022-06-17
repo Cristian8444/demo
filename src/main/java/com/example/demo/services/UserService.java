@@ -31,6 +31,7 @@ public class UserService {
         List<Blog> blogs= blogDao.getBlogBy(userid);
         user.setBlogs(blogs);
         return user;
+
     }
 
     public User getUsserPassByUsserName(String name){

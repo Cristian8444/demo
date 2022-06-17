@@ -16,6 +16,11 @@ public class BlogDao {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    public List<Blog>getAllBlogs(){
+        return jdbcTemplate.query("SELECT * FROM BLOG",
+                this::getBlog);
+    }
+
     public List<Blog>getBlogBy(int userId){
         return jdbcTemplate.query("SELECT * FROM BLOG WHERE USERID =?",
                 this::getBlog,userId);

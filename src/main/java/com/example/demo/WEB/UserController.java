@@ -5,11 +5,14 @@ import com.example.demo.ValidationException;
 import com.example.demo.db.BlogDao;
 import com.example.demo.model.Blog;
 import com.example.demo.model.User;
+import com.example.demo.services.BlogService;
 import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/blog")
@@ -18,15 +21,20 @@ public class UserController {
 
     UserService userService;
 
+    BlogService blogService;
+
 
     @Autowired
-    public UserController(UserService userService){
+    public UserController(UserService userService, BlogService blogService){
         this.userService=userService;
+        this.blogService=blogService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView displayBlogpage(){
         ModelAndView mav = new ModelAndView();
+        List<Blog> blogList = blogService.getAllBlogs();
+
 
         return mav;
     }
